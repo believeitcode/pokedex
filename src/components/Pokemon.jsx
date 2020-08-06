@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Link, CircularProgress, Button } from "@material-ui/core";
-import { toFirstCharUppercase } from "./constants";
+import { toFirstCharUppercase } from "../utils";
 import axios from "axios";
 
 const Pokemon = (props) => {
@@ -29,9 +29,9 @@ const Pokemon = (props) => {
       <>
         <Typography variant="h1">
           {`${id}.`} {toFirstCharUppercase(name)}
-          <img src={front_default} />
+          <img src={front_default} alt="pokemon_image" />
         </Typography>
-        <img style={{ width: "300px", height: "300px" }} src={fullImageUrl} />
+        <img style={{ width: "300px", height: "300px" }} src={fullImageUrl} alt="pokemon_image" />
         <Typography variant="h3">Pokemon Info</Typography>
         <Typography>
           {"Species: "}
@@ -41,6 +41,7 @@ const Pokemon = (props) => {
         <Typography>Weight: {weight} </Typography>
         <Typography variant="h6"> Types:</Typography>
         {types.map((typeInfo) => {
+          console.log(typeInfo.type.name);
           const { type } = typeInfo;
           const { name } = type;
           return <Typography key={name}> {`${name}`}</Typography>;
