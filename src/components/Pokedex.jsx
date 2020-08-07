@@ -8,7 +8,7 @@ import {
 
 import CircularProgress from "@material-ui/core/CircularProgress";
 import SearchIcon from "@material-ui/icons/Search";
-import { useStyles } from "../theme/PokedexTheme";
+import { useStyles } from "../styles/PokedexTheme";
 import axios from "axios";
 import PokemonCard from "./PokemonCard";
 
@@ -38,8 +38,11 @@ const Pokedex = ({ history }) => {
 
   return (
     <>
-      <AppBar position="static">
-        <Toolbar>
+      <AppBar className={classes.navBar} position="static">
+        <Toolbar className={classes.toolbarContainer}>
+        <a href="/" className={classes.starIcon}>
+           <img src="https://img.icons8.com/color/96/000000/star-pokemon.png" alt="icon"/>
+           </a>
            <div className={classes.searchContainer}>
               <SearchIcon className={classes.searchIcon} />
               <TextField 
@@ -48,6 +51,7 @@ const Pokedex = ({ history }) => {
               variant="standard"
               onChange={handleSearchChange} />
            </div>
+           
         </Toolbar>
       </AppBar>
       {pokemonData ? (

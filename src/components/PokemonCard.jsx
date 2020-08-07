@@ -7,7 +7,7 @@ import {
     CardContent,
     Typography,
   } from "@material-ui/core";
- import { useStyles } from "../theme/PokedexTheme" ;
+ import { useStyles } from "../styles/PokedexTheme" ;
 
 
 
@@ -19,15 +19,15 @@ const PokemonCard = ({pokemon, history}) => {
     console.log(id);
 
     return (  
-        <Grid item xs={6} md={3} key={id}>
-        <Card onClick={() => history.push(`/${id}`)}>
+        <Grid item xs={12} md={4} lg={2}   key={id} >
+        <Card onClick={() => history.push(`/${id}`)} className={classes.card}>
           <CardMedia
             className={classes.cardMedia}
             image={`https://pokeres.bastionbot.org/images/pokemon/${id}.png`}
             style={{ width: "130px", height: "130px" }}
           />
           <CardContent className={classes.cardContent}>
-            <Typography>{`${id}. ${toFirstCharUppercase(name)}`}</Typography>
+            <Typography>{`#${id}. ${toFirstCharUppercase(name)}`}</Typography>
           </CardContent>
         </Card>
       </Grid>

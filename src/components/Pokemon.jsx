@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Link, CircularProgress, Button } from "@material-ui/core";
+import { Typography, Link, CircularProgress, Button, Toolbar, AppBar } from "@material-ui/core";
 import { toFirstCharUppercase } from "../utils";
+import { useStyles } from "../styles/PokedexTheme" ;
 import axios from "axios";
 
 const Pokemon = (props) => {
   const { match, history } = props;
   const { params } = match;
   const { pokemonId } = params;
+const classes = useStyles();
+
   const [pokemon, setPokemon] = useState(undefined);
 
   useEffect(() => {
@@ -26,7 +29,14 @@ const Pokemon = (props) => {
     const fullImageUrl = `https://pokeres.bastionbot.org/images/pokemon/${id}.png`;
     const { front_default } = sprites;
     return (
-      <>
+      <div>
+      <AppBar className={classes.navBar} position="static">
+        <Toolbar className={classes.toolbarContainer}>
+           <a href="/">
+           <img src="https://img.icons8.com/color/96/000000/star-pokemon.png" className={classes.starIcon} alt="icon"/>
+           </a>
+        </Toolbar>
+      </AppBar>
         <Typography variant="h1">
           {`${id}.`} {toFirstCharUppercase(name)}
           <img src={front_default} alt="pokemon_image" />
@@ -46,7 +56,7 @@ const Pokemon = (props) => {
           const { name } = type;
           return <Typography key={name}> {`${name}`}</Typography>;
         })}
-      </>
+      </div>
     );
   };
   return (

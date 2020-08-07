@@ -5,11 +5,27 @@ export const useStyles = makeStyles(theme => ({
       padding: "20px",
       paddingLeft: "50px",
       paddingRight: "50px",
+      margin:"0",
+      height: "100%",
+      backgroundColor: "#cfd8dc",
+    },
+    navBar:{
+      backgroundColor: "#e53935",
+    },
+    card: {
+      width: "75%",
+      height: 'auto',
+      backgroundColor: "#e3f2fd",
+      overflow: "hidden",
+      paddingTop :"10px",
+      color: "#006a71",
+    
     },
     cardMedia: {
       margin: "auto",
     },
     cardContent: {
+    
       textAlign: "center",
     },
     searchContainer: {
@@ -19,6 +35,7 @@ export const useStyles = makeStyles(theme => ({
       paddingRight: "20px",
       marginTop: "5px",
       marginBottom: "5px",
+      
     },
     searchIcon: {
       alignSelf: "flex-end",
@@ -28,5 +45,11 @@ export const useStyles = makeStyles(theme => ({
     searchInput: {
       width: "200px",
       margin: "5px"
-    }
+    },
+    toolbarContainer: {
+      display: 'flex',
+      flexDirection: 'row',
+       justifyContent: "space-between",
+     
+    },
   }));
