@@ -8,3 +8,21 @@ body {
   font-family: 'Poppins',sans-serif;
   text-decoration:none;
 }
+
+
+.ability , .stats ,.info {
+   color: #6f4a8e;
+   font-weight: 800;
+}
+
+.types {
+  align-items:center;
+  font-weight: 800;
+  font-size: 15px;
+  width: 80px;
+  border-radius: 2px;
+  margin-right: 2px;
+  padding: 2px;
+  color: white;
+  justify-content: center;
+}

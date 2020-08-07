@@ -27,7 +27,7 @@ const PokemonCard = ({pokemon, history}) => {
             style={{ width: "130px", height: "130px" }}
           />
           <CardContent className={classes.cardContent}>
-            <Typography>{`#${id}. ${toFirstCharUppercase(name)}`}</Typography>
+            <Typography className={classes.pokedexName} >{`#${id}. ${toFirstCharUppercase(name)}`}</Typography>
           </CardContent>
         </Card>
       </Grid>

@@ -1,7 +1,18 @@
 import { fade, makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles(theme => ({
-    pokedexContainer: {
+  typography: {
+    "fontFamily": "\"MyCustomFont\"",
+    "fontSize": 20,
+    "lineHeight": 1.5,
+    "letterSpacing": 0.32,
+    useNextVariants: true,
+    suppressDeprecationWarnings: true,
+    h6: {
+      "fontWeight": 800,
+    },
+  },
+      pokedexContainer: {
       padding: "20px",
       paddingLeft: "50px",
       paddingRight: "50px",
@@ -52,4 +63,57 @@ export const useStyles = makeStyles(theme => ({
        justifyContent: "space-between",
      
     },
+    pokedexName:{
+      color: "#6e5773",
+    },
+    root: {
+      display: 'flex',
+      justifyContent:"space-around",
+      alignItems:"center",
+      backgroundColor: "#b3e5fc",
+    
+    },
+    details: {
+      display: 'flex',
+
+    },
+    pokeName:{
+      color: "#edf4f2",
+    },
+    pokeHeader: {
+      color:"#76ead7",
+    },
+    pokeTxt: {
+      color: "#dddddd",
+    },
+    cardContentL: {
+      
+      marginRight: "180px",
+      overflow: "hidden",
+      fontWeight: "800",
+      
+    },
+    cardContentM: {
+      display: 'flex',
+      flexDirection: 'column',
+      marginRight: "40px",
+      overflow: "hidden",
+      backgroundColor: "#d9adad",
+      borderRadius: "25px",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    cardContentR: {
+      display: 'flex',
+      flexDirection: 'column',
+      marginLeft: "40px",
+      overflow: "hidden",
+      backgroundColor: "#d9adad",
+      borderRadius: "25px",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "300px",
+    },
+   
+   
   }));
